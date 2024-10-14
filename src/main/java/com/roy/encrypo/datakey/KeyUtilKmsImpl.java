@@ -7,16 +7,14 @@ import com.amazonaws.services.kms.model.GenerateDataKeyRequest;
 import com.amazonaws.services.kms.model.GenerateDataKeyResult;
 
 import javax.crypto.*;
-import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.ByteBuffer;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.util.Base64;
 
-public class KeyUtilAesImpl implements KeyUtil {
+public class KeyUtilKmsImpl implements KeyUtil {
     private static final String SEMICOLON = ":";
     public static final String ALGORITHM = "AES";
     public static final int keySize = 128;

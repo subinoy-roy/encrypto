@@ -6,10 +6,10 @@ import java.security.NoSuchAlgorithmException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class KeyUtilAesImplTest {
+class KeyUtilKmsImplTest {
     @Test
     void generateKey() throws NoSuchAlgorithmException {
-        KeyUtilAesImpl keyUtilAes = new KeyUtilAesImpl();
+        KeyUtilKmsImpl keyUtilAes = new KeyUtilKmsImpl();
         String key = String.valueOf(keyUtilAes.generateKey());
         System.out.println(key);
         assertNotNull(key);
