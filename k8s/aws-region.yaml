@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-region
+  namespace: gdpr
+data:
+  AWS_KMS_REGION : "ap-southeast-2"

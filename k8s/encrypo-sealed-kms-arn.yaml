@@ -1,0 +1,15 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: encrypo-kms-arn
+  namespace: gdpr
+spec:
+  encryptedData:
+    AWS_KMS_KEY_ID: AgBS0tcfZsF5HJzoU/WIHefLa2mU9qLuPUJbATsCjyegYmGvFEtq8No7ei+esJBrwGoWzBr8fsgKf35D3udjTGueWYMyS+w4ufspRzBka7j5e1TKiNlfk46pfSQKzQlUS9SEqGtuPmccJGXbDofwP/XsYlPCNN0EYwufplnVW2Dws7A+ujhGdxAknhTJfsGQ80Vti1mdjPOuEWCUq3NWy/kkhW1aZEbR1va1Qp4Fkqs6wyP6FSO88G3R86UFGwjvZDgTcBjwI0UJCsToFkGjngOU6tdAziPBmqJx59dh1nsU1xcQOKh7XOpI+XrqfJi9pn8YMKXIoiMw9x0OraoVFsyQmDF2pVEANEp+Ij611fp4bBNPnO6hhVHhoDENTzEUmG5+QXaThUPOHqD7qYUC1stlJ8s8gFV1VXYveLLbjnS2yz8mom8+qHupSlGmq0Yhr0Xr+KqiWgGCwCNhf8uBOJZ2rjgwDOjtFHfsdCj0hGfNg0TcLgpm92wflf0UYRHiliqh1g1DF0CDO6v6jnf3ALyLbAmnCoRYAu9iIqgkqzHbo4o+oXXPZTwM9kjhd1PwhIrwQOXT321HLoVwZDh97LfK8d18KMUTyYVgJEP/HXlWvAY9/7sIpSKCZmx2cAx2/ncB3MkCLPlhtpv9kJYapIzQR2df8lMd1PKMzy47LSaEdE8KiWmk6kBLcMS00ZePHDzBMXokcDiPSJOXMZ+sD6BoQH0g8FEaXD90xE6lil25lNyvOmo=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: encrypo-kms-arn
+      namespace: gdpr

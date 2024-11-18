@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: encrypo-app
+  namespace: gdpr
+  labels:
+    app: encrypo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.com.roy/name: encrypo-app
+  template:
+    metadata:
+      name: encrypo-app
+      labels:
+        app.com.roy/name: encrypo-app
+    spec:
+      containers:
+        - name: encrypo-app
+          image: subinoyroy/encrypo
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8089
+          volumeMounts:
+            - mountPath: /root/.aws/
+              name: aws-credentials-volume
+              readOnly: true
+          env:
+            - name: AWS_KMS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  key: AWS_KMS_KEY_ID
+                  name: encrypo-kms-arn
+            - name: AWS_KMS_REGION
+              valueFrom:
+                configMapKeyRef:
+                  key: AWS_KMS_REGION
+                  name: aws-region
+      restartPolicy: Always
+      volumes:
+        - name: aws-credentials-volume
+          secret:
+            secretName: aws-credentials
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: encrypo-app
+  namespace: gdpr
+spec:
+  selector:
+    app.com.roy/name: encrypo-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8089
+  type: NodePort

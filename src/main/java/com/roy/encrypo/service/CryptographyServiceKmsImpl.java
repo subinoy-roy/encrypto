@@ -28,7 +28,7 @@ public class CryptographyServiceKmsImpl implements CryptographyService {
     private String KEY_SPEC;
     @Value("${app.crypto.transformation.algo}")
     private String TRANSFORMATION_ALGORITHM;
-    @Value("${AWS_KMS_KEY_ID}")
+    @Value("${app.aws_kms_id.value}")
     private String AWS_KEY_ID;
 
     @Autowired
